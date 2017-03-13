@@ -1,5 +1,5 @@
 # ASI-chainsaw
-Simple Bash Comands For Automatize Some Tasks\n
+##Simple Bash Comands For Automatize Some Tasks
 to compile
  #cc main.c -o main
  to execute 
