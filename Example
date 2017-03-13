@@ -1,0 +1,28 @@
+#!/bin/bash
+#BASH scripting by ARRAIZ
+#this is a comment
+#pasing a PID to the main program in one line is easy
+
+
+PROC = "PIDNUM"
+#now use exec
+./main $PROC 
+
+ #one line
+ PROC = "PIDNUM" && ./main $PROC
+ 
+ #to automatize even more we can find the PID in the task-table
+ PROC="$(ps -fe | grep <process_name> | grep -v grep | awk '{print $2}')" 
+ 
+ #now 
+ ./main ${PROC}
+
+#in one line 
+PROC="$(ps -fe | grep <PROCESS_NAME> | grep -v grep | awk '{print $2}')" && ./main ${PROC}
+
+#the same with IPCS queue ID
+QUEUE="$(ipcs -q | grep <QUEUE_KEY> |  awk '{print $2}')" && ./main ${QUEUE}
+
+#now we have and infinite one line command
+
+PROC="$(ps -fe | grep <PROCESS_NAME> | grep -v grep | awk '{print $2}')" && QUEUE="$(ipcs -q | grep <QUEUE_KEY>  | awk '{print $2}')" ./main ${PROC} ${QUEUE}
