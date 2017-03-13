@@ -1,7 +1,7 @@
 # ASI-chainsaw
 ##Simple Bash Comands For Automatize Some Tasks
-to compile
+######to compile
  #cc main.c -o main
- to execute 
+ ######to execute 
  #chmod +x main
  #./main 
